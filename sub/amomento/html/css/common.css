@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Instrument+Serif&family=Noto+Sans+KR:wght@900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html,
+body {
+    font-size: 62.5%;
+    color: #333;
+    font-family: 'SUIT-Regular';
+    font-weight: 400;
+}
+
+.inner {
+    max-width: 1360px;
+    width: calc(100% - 40px);
+    margin: 18rem auto;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .pc {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
