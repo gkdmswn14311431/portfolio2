@@ -1,0 +1,417 @@
+@charset "utf-8";
+@import url('font.css');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'SUIT-Regular';
+    font-weight: 400;
+    background-color: rgb(252, 236, 213);
+}
+#wrap {
+    margin: 0 auto; 
+    position: relative;
+}
+#wrap .inner {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+}
+
+/* header */
+header { 
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+header.on {
+    backdrop-filter: blur(5px);
+}
+header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner h1 {
+    opacity: 0;
+    width: calc(100% - 50);
+    height: 100%;
+    align-items: center;
+
+}
+header .inner h1 a {}
+
+header .inner h1 a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ 
+header .inner .menu_list .lang_list {
+    
+}
+header .inner .menu_list .lang_list li {
+    display: inline-block;
+    margin-right: 15px;
+    color: aliceblue;
+}
+header .inner .menu_list .lang_list li a {}
+
+header .inner .menu_list {
+    display: flex;
+    align-items: center;
+}
+header .inner .menu_list > img {
+    width: 25px;
+}
+
+header .inner nav {display: none;}
+header .inner nav .close {}
+header .inner nav .gnb {}
+header .inner nav .gnb .depth01 {}
+header .inner nav .gnb .depth01 > a {}
+header .inner nav .gnb .depth01 .depth02  {}
+header .inner nav .gnb .depth01 .depth02 li {}
+header .inner nav .gnb .depth01 .depth02 li a {}
+
+/* main_visual */
+.main_visual {
+    height: 100vh;
+   /*  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; */
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main_visual .swiper-slide {
+    position: relative;
+}
+.main_visual .swiper-slide .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+    font-size: 40px;
+    line-height: 1.3; 
+}
+.main_visual .swiper-slide .inner h2 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: bold;
+
+}
+.main_visual .swiper_control {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -5px;
+    color: #fff;
+    z-index: 99;
+    display: flex;    
+    margin-left: 50px;
+}
+.main_visual .swiper_control div.swiper-play {
+    display: none;
+}
+.main_visual .swiper_control div {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+}
+.main_visual .swiper_control div img {
+    width: 20px;
+}
+.swiper-button-prev:after, 
+.swiper-rtl .swiper-button-next:after {
+    content: '';
+    background-image: url('../img/next02_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    transform: rotate(-180deg);
+}
+.swiper-button-next:after, 
+.swiper-rtl .swiper-button-prev:after {
+    content: '';
+    background-image: url('../img/next02_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255);
+}
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+
+main {
+     
+}
+
+.cont01{
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+}
+.cont01 .event{
+    width: 30%;
+    height: 100vh;
+    padding: 50px;
+    background-image: url(../img/store_img.jpg);
+    position: sticky;
+    top: 0;
+    left: 0;
+}/* 포지션 스티키 안되는 이유는 부모한테 디스플레이 플렉스 있어서
+형제인 이벤트와 룩북의 높이가 같아서 안된다. 디스플레이 플렉스 잡혀 있는
+애한테 얼라인 아이템즈 플렉스 스타트 해준다. 그러면 서로 가지고 있는 높이값만
+가지게 된다. */
+.cont01 .event h3{
+    font-size: 5rem;
+    margin-bottom: 40px;
+}
+.cont01 .event figure img{
+    width: 100%;
+}
+.cont01 .month{
+    width: 70%;
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+.cont01 .month h3{
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+.cont01 .month .list{
+    display: flex;
+    justify-content: space-between;
+}
+.cont01 .month .list:nth-of-type(2) figure{
+    order: -1;
+}/* h3랑 같은 라인에 있기 때문에 엔쓰오브 찰드 쓰면 안되고
+엔스오브타입 써야 한다. */
+.cont01 .month .list .text{
+    width: 60%;
+}
+.cont01 .month .list .text div h4{
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+.cont01 .month .list .text div{
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+}
+.cont01 .month .list .text div strong{
+    font-size: 18px;
+}
+.cont01 .month .list figure{
+    width: 35%;
+}
+.cont01 .month .list figure img{
+    width: 100%;
+}
+
+
+/* business */
+
+.business {
+    padding: 100px 0; 
+}
+.business .title {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.business .title.on {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: 0.7s 0.2s;
+}
+.business .title h3 {
+    font-family: 'IBM Plex Serif', serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.3;
+    color: #0f2502;
+}
+.business .title h3 span {
+    display: block;
+    color: #838383;
+}
+.business .title p {
+    margin: 30px 0 80px;
+    line-height: 1.5;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.business .list {}
+.business .list .business_menu {
+    display: flex;
+    margin-bottom: 40px;
+    
+}
+.business .list .business_menu li {
+    margin-right: 20px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.business .list .business_menu li.on {
+    padding-left: 20px;
+}
+.business .list .business_menu li.on::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: #bb840f93;
+    position: absolute;
+    left: 0;
+    top: -12px;
+    z-index: -1;
+    border-radius: 50%;
+}
+.business .list .item {
+    display: none;
+}
+.business .list .item.on {
+    display: block;
+}
+.business .list .item figure {
+    height: 400px;
+}
+.business .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.business .list .item div {
+    margin-top: 30px;
+}
+.business .list .item div span {}
+.business .list .item div h4  {
+    font-size: 50px;
+    margin: 10px 0 20px;
+    font-weight: bold;
+}
+.business .list .item div p {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+.business .list .item div a {
+    display: inline-block;
+    background-color: #eee;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+.women{
+    background-color: rgb(41, 40, 40);
+    height: 700px;
+    color: rgb(240, 240, 243);
+    display: flex;
+    align-items: center;
+}
+.women div{
+    width: 30%;
+    padding: 0 30px;
+    order: 1;
+}
+.women div h4{
+    font-size: 22px;
+    margin: 20px 0;
+}
+.women div p{
+    line-height: 1.3;
+    word-break: keep-all;
+}
+.women div a{
+    width: 110px;
+    height: 40px;
+    border: 1px solid #f8f6f6;
+    display: block;
+    text-align: center;
+    line-height: 40px; /* 수직정렬 */
+    font-size: 14px;
+    margin-top: 15px;
+}
+.women figure{
+    width: 70%;
+    height: 100%;    
+}
+.women figure img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover ;
+}
+/* gift end */
+.gift{
+    margin: 100px auto;
+    position: relative;
+    height: 60vh;
+}
+.gift .top h3{
+    font-size: 4rem;
+    margin: 30px;
+}
+.gift .top p{
+    font-size: 1.5rem;
+    margin-left: 30px;
+    line-height: 1.3;
+}
+.gift .down {
+    height: 100%;
+    width: calc(100% - 100px);
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+}
+.gift .down .tab_menu{
+    width: 100%
+}
+.gift .down .tab_cont{
+    width: 100%;
+    height: 350px;
+}
+.gift .down .tab_cont img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.gift .down .tab_menu li {
+    margin-bottom: 50px;
+    cursor: pointer;
+    font-size: 2rem;
+
+}
+
+footer {
+    font-size: 1rem;
+    text-align: center;
+}
