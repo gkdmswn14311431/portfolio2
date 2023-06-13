@@ -1,0 +1,729 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;
+    /* font-size: 10px,1rem */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    color: #333;
+    background-image: url(../img/패턴2-수정.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'MICEGothic Bold';
+    overflow-x: hidden;
+}
+
+header {
+    height: 200px;
+    margin-top: 70px;
+}
+
+header.inner {
+    max-width: 1440px;
+    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .inner .logo h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: aliceblue;
+}
+
+header .inner .logo .tablet {
+    display: none;
+}
+
+header .inner .menu {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header .inner .menu .left {
+    height: 200px;
+    line-height: 200px;
+    padding-left: 20px;
+}
+
+header .inner .menu .left strong {
+    position: absolute;
+    top: 40px;
+    left: 48px;
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+header .inner .menu .left figure {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+header .inner .menu .left figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+header .inner .menu .right {
+    height: 100%;
+
+}
+
+header .inner .menu .right .ticket figure {
+    position: absolute;
+    top: 2px;
+    right: 200px;
+    height: 200px;
+}
+
+header .inner .menu .right .ticket figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+header .inner .menu .right .item_pc figure {
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+}
+
+header .inner .menu .right .item_pc figure img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+header .inner .menu .right .item_tablet figure {
+    display: none;
+}
+
+/* header end */
+
+.main_visual {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_visual figure {
+    height: 635px;
+    width: 635px;
+    margin: 0 auto;
+    animation: figure 1s infinite alternate linear;
+
+}
+
+.main_visual figure img {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(20px 20px 20px grey);
+}
+
+@keyframes figure {
+    0% {
+        transform: translateY(50px) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(90deg);
+    }
+}
+
+.main_visual ul {
+    position: absolute;
+    top: 300px;
+    right: 40px;
+
+}
+
+.main_visual ul li {
+    margin-bottom: 46px;
+    width: 40px;
+}
+
+.main_visual ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySwiper {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 100%
+}
+
+.mySwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+
+.mySwiper .swiper-button-next:after,
+.mySwiper .swiper-rtl .swiper-button-prev:after {
+    content: '';
+    background-image: url('../img/Vector-1.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 1;
+    position: absolute;
+    top: -280px;
+    right: 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 50px;
+    height: 50px;
+
+}
+
+.mySwiper .swiper-button-prev::after,
+.mySwiper .swiper-rtl .swiper-button-next::after {
+    content: '';
+    background-image: url('../img/Vector.png');
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 1;
+    position: absolute;
+    top: -280px;
+    left: 30px;
+}
+
+.mySwiper .inner {
+    margin: 0 auto;
+}
+
+.mySwiper .inner .top {
+    display: flex;
+    justify-content: space-between;
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.mySwiper .inner .top .content {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.mySwiper .inner .top .content figure {
+    width: 280px;
+    padding: 0 10px;
+    margin-bottom: 52px;
+}
+
+.mySwiper .inner .top .content figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.mySwiper .inner .top .text {
+    margin: 0 auto;
+
+}
+
+.mySwiper .inner .top .text h4 {
+    font-size: 90px;
+    color: aliceblue;
+    margin-bottom: 100px;
+}
+
+.mySwiper .inner .top .text strong {
+    font-size: 100px;
+    color: blueviolet;
+}
+
+.mySwiper .inner .bottom {
+    width: 100%;
+}
+
+.mySwiper .inner .bottom figure {
+    width: 1440px;
+    margin: 0 auto;
+
+}
+
+.mySwiper .inner .bottom figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.cont02 {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.cont02 .text a {
+    font-size: 3rem;
+    color: aliceblue;
+    display: inline-block;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.cont02 .text a::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: lightskyblue;
+    position: absolute;
+    top: -11px;
+    left: -15px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cont02 .text h2 {
+    font-size: 6rem;
+    color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.cont02 .text h2 span {
+    color: blueviolet;
+}
+
+.cont02 .text p {
+    font-size: 4rem;
+    color: aliceblue;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.cont02 .list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.cont02 .list .item {
+    width: 34%;
+    margin-right: 80px;
+    text-align: center;
+}
+
+.cont02 .list .item strong {
+    font-size: 10rem;
+    color: rgb(235, 109, 235)
+}
+
+.cont02 .list .item p {
+    word-wrap: break-word;
+    font-size: 3rem;
+    color: aliceblue;
+    margin-top: 30px;
+    line-height: 1.3;
+}
+
+
+/* cont02 end */
+
+.cont03 {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.cont03 h3 {
+    font-size: 7rem;
+    color: lightskyblue;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.cont03 .inner .box figure img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.cont03 .inner {
+    position: relative;
+}
+
+.cont03 .inner .item .content {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 5vw;
+    left: 1vw;
+}
+
+.cont03 .inner .item .content figure {
+    /* width: 770px; */
+    height: 40vw;
+    animation: rotate_image 6s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cont03 .inner .item .content figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont03 .inner .item .top {
+    margin: 0 auto;
+
+}
+
+.cont03 .inner .item .top figure {
+    /* width: 700px; */
+    height: 30vw;
+    position: absolute;
+    top: 11vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cont03 .inner .item .top figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* cont03 end */
+
+.cont04 {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+}
+
+.cont04 .youtube {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+
+}
+
+.youtube iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* coont04 end */
+
+.cont05 {
+    background: url('../img/center01.png') center center / cover no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.cont05 .inner {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    right: 30px;
+    text-align: center;
+}
+
+.cont05 .inner h1 {
+    font-size: 10rem;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+
+.cont05 .inner h2 {
+    font-size: 10rem;
+    color: aliceblue;
+}
+
+.cont05 .inner p {
+    font-size: 10rem;
+}
+
+.cont05 .inner .left {
+    position: absolute;
+    left: 7%;
+    top: 40%;
+}
+
+.cont05 .inner .right {
+    position: absolute;
+    right: 6%;
+    top: 40%;
+}
+
+
+/******cont06 시작*******/
+.cont06 .bg{
+    background-color: #fff;
+}
+.cont06 .bg p {
+    white-space: nowrap;
+    font-size: 4rem;
+    color: #91B5FB;
+    padding: 20px 0;
+    animation-name: text;
+    /* 이름 */
+    animation-duration: 50s;
+    /* 움직이는 시간 */
+    animation-iteration-count: infinite;
+    /* 횟수 */
+    /* 무한반복 infinite */
+    animation-direction: alternate;
+    /* 재생방향
+            alternate: 정방향 재생 후 역방향
+            reverse: 역방향 */
+}
+@keyframes text{
+    /* 시작 */
+    0% {
+        transform: translateX(0) 
+    }
+    /* 끝 */
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+/******** cont07 시작 *******/
+.cont07 .inner{
+    height: 100vh;
+    background: url(../img/notice1.jpg)
+    center center/ cover no-repeat; 
+}
+.cont07 h3{
+    padding-top: 100px;
+    font-size: 7rem;
+    text-align: center;
+}
+.cont07 .list{
+    margin-top: 30px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.cont07 .list .text{
+    width: calc(100% / 3);
+    padding: 0 30px;
+    color: aliceblue;
+    position: relative;
+    z-index: 9;
+}
+
+.cont07 .list .text strong{
+    font-size: 2rem;
+}
+.cont07 .list .text div p{
+    font-size: 4rem;
+    margin-top: 20px;
+}
+.cont07 .list .text div a {
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin-top: 50px;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2rem;
+}
+.cont07 .list .bg1{
+    background: url(../img/background_poster.jpg)
+    center center / cover no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.cont07 .list .bg2{
+    background: url(../img/2020-seoul-jazz-festival-line-up-info-thumb-7430db56-b5e4-46cd-9de8-d257a7a2184c.jpg)
+    center center / cover no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+ .cont07 .list .bg3{
+    background: url(../img/sjf01.jpg)
+    center center / cover no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 50%
+    }
+
+    header .inner .logo .pc {
+        display: none;
+    }
+
+    header .inner .logo .tablet {
+        display: block;
+        font-size: 5rem;
+    }
+
+    header .inner .menu .left {
+        position: absolute;
+        top: -60px;
+        left: -25px;
+
+    }
+
+    header .inner .menu .left figure {
+        width: 40px;
+        height: 40px;
+    }
+
+    header .inner .menu .left strong {
+        display: none;
+    }
+
+    header .inner .menu .right .ticket {
+        display: none;
+    }
+
+    header .inner .menu .right .item_pc figure {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .mySwiper .inner .top {
+        width: calc(100% - 20px);
+        align-items: center;
+    }
+
+    .mySwiper .inner .top .text {
+        display: none;
+    }
+
+    /* .mySwiper .inner .top .content figure{
+        width: 45%;
+    } */
+    .mySwiper .inner .bottom figure {
+        width: calc(100% - 40px);
+
+    }
+
+    .mySwiper .swiper-button-next:after,
+    .mySwiper .swiper-rtl .swiper-button-prev:after {
+        display: none;
+    }
+
+    .mySwiper .swiper-button-prev::after,
+    .mySwiper .swiper-rtl .swiper-button-next::after {
+        display: none;
+    }
+    .cont02 .text {
+        font-size: 50%;
+    }
+
+    .cont02 .list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cont02 .list .item {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .cont05 .inner p {
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    main .main_visual figure {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+    }
+
+    main .main_visual ul {
+        width: 10px;
+
+    }
+    .mySwiper .inner .top .content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 20px;
+
+    }
+
+    .mySwiper .inner .top .content figure {
+        width: 48%
+    }
+
+    .mySwiper .inner .top .content figure:nth-child(5) {
+        display: none;
+    }
+
+    .mySwiper .inner .top .content figure:nth-child(6) {
+        display: none;
+    }
+}

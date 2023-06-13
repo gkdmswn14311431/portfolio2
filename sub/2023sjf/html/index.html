@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sjf2023</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="css/001.css" rel="stylesheet" />
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        $(function () {
+            var swiper = new Swiper(".mySwiper", {
+
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });//swiper end
+
+
+            function eventDay() {
+                let time = document.getElementById('time');
+
+                let today = new Date();
+                let event = new Date('2023-06-30:00:00');
+                let eToDay = event - today;
+
+                console.log(eToDay);
+
+                // '밀리세컨드단위 1밀리초(ms)' = 0.001초(s)
+                // 우리가 알고 있는 밀리세컨드단위를 이용해서
+                // 날짜, 시간, 분, 초를 가지고 와야함.
+                // 0.001초를 1초로 만들기 위해 1 * 1000 => 1초
+                // 밀리세컨드 초를 이용해서 60초, 60분, 24시간으로 나눔
+                // 60 * 1000 => 60초(1분) * 60 => 60분(1시간) * 24 = 24시간(하루)
+
+
+                //////////////////////
+                ///////////시간 구하는 공식
+                // 1초 = 1000
+                // 1분(60초) = 1000 * 60
+                // 1시간(60분) = 1000 * 60 * 60
+                // 1일(60분*24) = 1000 * 60 * 60 * 24
+
+
+                let eDay = Math.floor(eToDay / (1000 * 60 * 60 * 24)) + 1;
+                console.log(eDay); //남은일
+
+                let eHour = String(Math.floor((eToDay % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, 0);
+
+                console.log(eHour); //남은시간
+
+                let eMin = Math.floor((eToDay % (1000 * 60 * 60)) / (1000 * 60));
+                console.log(eMin); //남은분
+
+                let eSec = Math.floor((eToDay % (1000 * 60)) / 1000);
+                console.log(eSec); //남은초
+
+                time.innerHTML = eDay + '일' + eHour + ':' + eMin + ':' + eSec;
+            }//eventDay()
+
+            eventDay();
+            setInterval(eventDay, 1000);
+
+
+           
+            //eq() 탐색선택자
+            //=> 인덱스 번호에 해당하는 선택자를 찾아서 적용
+            $('.eq p').eq(1).css({
+                'background-color': 'green',
+                'font-size': '30px'
+            })
+            $('.eq').hide();
+            //hide() => display:none의 성질을 가짐
+            //show() => display:block의 성질을 가짐
+
+            //text한테 마우스 올렸을 때
+            //마우스 올린 텍스트의 순서에 따라
+            //bg가 나타남
+
+            let text07 = $('.cont07 .text');
+            let bg = $('.contbg');
+
+            text07.mouseenter(function(){
+                bg.eq($(this).index()).fadeIn();
+                //index()=> 해당하는 요소가 몇번째인지 찾아서 전달
+                console.log($(this).index())
+            });
+            text07.mouseleave(function(){
+                bg.fadeOut()
+            })
+        })
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <div class="logo">
+                <h1 class="pc">
+                    <a href="#">
+                        SEOUL JAZZ FESTIVAl 2023
+                    </a>
+                </h1>
+                <h1 class="tablet">
+                    <a href="#">
+                        SEOUL<br>
+                        JAZZ FESTIVAl 2023
+                    </a>
+                </h1>
+
+            </div><!-- logo end -->
+
+            <div class="menu">
+                <div class="left">
+                    <figure>
+                        <a href="#"><img src="img/🦆 icon _globe_.png" alt="en" /></a>
+                    </figure>
+                    <strong>EN</strong>
+                </div><!-- left end -->
+
+                <div class="right">
+                    <div class="ticket">
+                        <figure>
+                            <a href="#"><img src="img/티켓.png" alt="티켓" /></a>
+                        </figure>
+                    </div><!-- ticket end -->
+                    <div class="item_pc">
+                        <figure>
+                            <a href="#"><img src="img/🦆 icon _menu_.png" /></a>
+                        </figure>
+                    </div><!-- item_pc end -->
+                </div><!-- right end -->
+            </div><!-- menu end -->
+        </div><!-- inner end -->
+    </header>
+
+    <main>
+        <section class="main_visual">
+            <figure>
+                <img src="img/수정.png" alt="중간원" />
+            </figure>
+            <ul>
+                <li><a href="#"><img src="img/🦆 icon _twitter logo_.png" alt="트위터" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _video_.png" alt="유튜브" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _logo facebook_.png" alt="페이스북" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _logo linkedin_.png" alt="인스타그램" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _musical notes outline_.png" alt="뮤직온" /></a></li>
+            </ul>
+        </section><!-- main_visual end -->
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="inner">
+                        <div class="item">
+                            <div class="top">
+                                <div class="content">
+                                    <figure>
+                                        <img src="img/Mask group-1.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/Mask group-2.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/Mask group-3.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/Mask group-4.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/Mask group-5.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/Mask group.png" alt="" />
+                                    </figure>
+                                </div><!-- content end -->
+                                <div class="text">
+                                    <h4>Fri, may 26-<br />
+                                        Sun,may 28<br />
+                                        Olympic<br />
+                                        Park<br />
+                                    </h4>
+                                    <strong>5/26 (Fri)</strong>
+                                </div><!-- text end -->
+                            </div><!-- top end -->
+
+                            <div class="bottom">
+                                <figure>
+                                    <img src="img/thumb-3660645671_aDsGRMKE_8d4873dbfb26e68b7d8a38fad7adc84a3c07ce84_1080x1528 (1) 1.png"
+                                        alt="" />
+                                </figure>
+                            </div><!-- bottom end -->
+                        </div><!-- item end -->
+                    </div><!-- inner end -->
+                </div><!-- swiper-slide 1 end-->
+
+                <div class="swiper-slide">
+                    <div class="inner">
+                        <div class="item">
+                            <div class="top">
+                                <div class="content">
+                                    <figure>
+                                        <img src="img/토 가수1.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/토 가수2.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/토 가수3.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/토 가수4.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/토 가수5.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/토 가수6.png" alt="" />
+                                    </figure>
+                                </div><!-- content end -->
+                                <div class="text">
+                                    <h4>Fri, may 26-<br />
+                                        Sun,may 28<br />
+                                        Olympic<br />
+                                        Park<br />
+                                    </h4>
+                                    <strong>5/27 (Sat)</strong>
+                                </div><!-- text end -->
+                            </div><!-- top end -->
+
+                            <div class="bottom">
+                                <figure>
+                                    <img src="img/토요일 라인업 수정.png" alt="" />
+                                </figure>
+                            </div><!-- bottom end -->
+                        </div><!-- item end -->
+                    </div><!-- inner end -->
+                </div><!-- swiper-slide 2 end-->
+
+                <div class="swiper-slide">
+                    <div class="inner">
+                        <div class="item">
+                            <div class="top">
+                                <div class="content">
+                                    <figure>
+                                        <img src="img/일 가수1.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/일 가수2.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/일 가수3.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/일 가수4.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/일 가수5.png" alt="" />
+                                    </figure>
+                                    <figure>
+                                        <img src="img/일 가수6.png" alt="" />
+                                    </figure>
+                                </div><!-- content end -->
+                                <div class="text">
+                                    <h4>Fri, may 26-<br />
+                                        Sun,may 28<br />
+                                        Olympic<br />
+                                        Park<br />
+                                    </h4>
+                                    <strong>5/28 (Sun)</strong>
+                                </div><!-- text end -->
+                            </div><!-- top end -->
+
+                            <div class="bottom">
+                                <figure>
+                                    <img src="img/일요일라인업.png" alt="" />
+                                </figure>
+                            </div><!-- bottom end -->
+                        </div><!-- item end -->
+                    </div><!-- inner end -->
+                </div><!-- swiper-slide 3 end-->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div><!-- myswiper end -->
+
+        <section class="cont02">
+            <div class="inner">
+                <div class="text">
+                    <a>ABOUT US</a>
+                    <h2>Where <span>music</span> and <span>people</span> are connected.</h2>
+                    <p>서울재즈페스티벌은 재즈와 함께 여러 아티스트들의 예술을 향유합니다.</p>
+                </div><!-- text end -->
+                <hr style="border: solid 1px rgb(253, 253, 253);">
+
+                <div class="list">
+                    <div class="item">
+                        <strong>225</strong>
+                        <p>누구나 즐기며 들을 수 있는 225곡의<br>
+                            플레이리스트</p>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <strong>60</strong>
+                        <p>60명의<br>
+                            아티스트들과 함께 즐기는<br>
+                            페스티벌</p>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <strong>15</strong>
+                        <p>페스티벌이<br>
+                            관객들과<br>
+                            함께 한 시간 15년</p>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <strong>8</strong>
+                        <p>8곳의 공간에서
+                            펼쳐지는 다양한 공연</p>
+                    </div><!-- item end -->
+                </div><!-- list end -->
+            </div><!-- inner end -->
+        </section><!-- cont02 end -->
+
+        <section class="cont03">
+            <h3>PLAY LIST</h3>
+            <div class="inner">
+                <div class="box">
+                    <figure>
+                        <img src="img/카세트 수정.jpg" alt="" />
+                    </figure>
+                </div><!-- box end -->
+                <div class="item">
+                    <div class="content">
+                        <figure>
+                            <img src="img/lp.png" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="img/lp.png" alt="" />
+                        </figure>
+                    </div><!--content end  -->
+                    <div class="top">
+                        <figure>
+                            <img src="img/플레이리스트.png" alt="" />
+                        </figure>
+                    </div><!-- top end -->
+                </div><!-- item end -->
+            </div><!-- inner end -->
+        </section><!-- cont03 end -->
+
+        <section class="cont04">
+            <div class="youtube">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qgaqiIv3pGE?autoplay=1&mute=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div><!-- youtube end -->
+
+        <section class="cont05">
+            <div class="inner">
+                <div>
+                    <h1>D-day</h1>
+                    <h2 id="time"></h2>
+                    
+
+                </div>
+                <p class="left">Are you</p>
+                <p class="right">Ready?</p>
+            </div><!-- inner end -->
+
+        </section><!-- cont05 end -->
+
+        <section class="cont06">
+            <div class="bg">
+                <p>SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL
+                    2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL
+                    2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL 2023 SEOUL JAZZ FESTIVAL
+                    2023
+                </p>
+            </div>
+        </section><!-- cont06 end -->
+
+        <section class="cont07">
+            <div class="inner">
+                <h3>Notice & News</h3>
+            <div class="list">  
+                <div class="text">
+                    <div>
+                        <strong>[News]</strong>
+                        <p> 서울재즈페스티벌 '제71회 서울특별시 문화상' 수상.</p>
+                        <a href="#">more</a>
+                    </div>
+
+                </div><!-- text end -->
+
+                <div class="text">
+                    <div>
+                        <strong>[Notice]</strong>
+                        <p>제15회 서울재즈페스티벌 타임테이블을 공개</p>
+                        <a href="#">more</a>
+                    </div>
+
+                </div><!-- text end -->
+
+                <div class="text">
+                    <div>
+                        <strong>[Notice]</strong>
+                        <p>2023 SJF2023 티켓 오픈 일정 & 가격 안내
+                        </p>
+                        <a href="#">more</a>
+                    </div>
+                </div><!-- text end -->
+                <div class="contbg bg1"></div>
+                <div class="contbg bg2"></div>
+                <div class="contbg bg3"></div>
+            </div><!-- list end -->
+            </div><!-- inner end -->
+        </section><!-- cont07 end -->
+    </main>
+    <footer>
+    </footer>
+
+</body>
+
+</html>
