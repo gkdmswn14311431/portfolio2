@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>힌스 모바일</title>
+
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script>
+        window.onload = function () {
+            //메뉴 아이콘 클릭
+            let bodyTag = document.getElementsByTagName('body')[0];
+            let menuOpen = document.getElementsByClassName('menu_open')[0];
+            let menuClose = document.getElementsByClassName('menu_close')[0];
+            let hdMenu = document.getElementsByTagName('nav')[0];
+
+            hdMenu.style.display = 'none';
+
+            menuOpen.onclick = function () {
+                if (hdMenu.style.display == 'none') {
+                    hdMenu.style.display = 'block';
+
+                    bodyTag.classList.add('body_bg');
+
+                }
+            }
+
+            menuClose.onclick = function () {
+                if (hdMenu.style.display == 'block') {
+                    hdMenu.style.display = 'none'
+
+                    bodyTag.classList.remove('body_bg');
+                }
+            }
+
+            //face ,lip ,eye 상품변경
+
+            let event = document.getElementsByClassName('event')[0];
+            let eventMenu = event.getElementsByClassName('event_menu')[0];
+            let eventMenuLi = eventMenu.getElementsByTagName('li');
+
+            let eventList = event.getElementsByClassName('list');
+
+            for (let i = 0; i < eventMenuLi.length; i++) {
+                eventMenuLi[i].onclick = function () {
+                    eventMenuLi[0].classList.remove('on');
+                    eventMenuLi[1].classList.remove('on');
+                    eventMenuLi[2].classList.remove('on');
+
+                    eventMenuLi[i].classList.add('on');
+
+
+
+                    eventList[0].classList.remove('on');
+                    eventList[1].classList.remove('on');
+                    eventList[2].classList.remove('on');
+
+                    eventList[i].classList.add('on');
+                }
+            }
+            //best 이미지 변경
+
+             let best = document.getElementsByClassName('best')[0];
+             let bestMenu = best.getElementsByClassName('best_menu')[0];
+             let bestMenuLi = bestMenu.getElementsByTagName('li');
+
+             let bestList = best.getElementsByClassName('list')[0];
+             let bestListItem = bestList.getElementsByClassName('item');
+             
+             //bestList.style.display = 'none';
+             for (let i = 0; i < bestListItem.length; i++) {
+                console.log(bestListItem[i])
+                bestListItem[i].onclick = function () {
+                    bestMenuLi[0].classList.remove('on');
+                    bestMenuLi[1].classList.remove('on');
+                    bestMenuLi[2].classList.remove('on');
+
+                    bestMenuLi[i].classList.add('on');
+
+
+
+                    bestList[0].classList.remove('on');
+                    bestList[1].classList.remove('on');
+                    bestList[2].classList.remove('on');
+
+                    bestList[i].classList.add('on');
+                }
+            }
+        }// window.onload end
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <h1>
+                <a href="#">
+                    <img src="img/로고.png" alt="힌스 로고" />
+                </a>
+            </h1>
+            <ul>
+                <li><a href="#"><img src="img/🦆 icon _person_.png" alt="회원가입" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _magnifying glass_.png" alt="돋보기" /></a></li>
+                <li><a href="#"><img src="img/🦆 icon _lock closed_.png" alt="장바구니" /></a></li>
+            </ul>
+            <div class="menu_open">
+                <img src="img/🦆 icon _hamburger menu_.png" alt="메뉴보기" />
+            </div><!-- menu_open end -->
+
+            <nav>
+                <div class="menu_close">
+                    <img src="img/Vector.png" alt="메뉴닫기" />
+                </div><!--menu_close end  -->
+                <div class="menu_logo">
+                    <img src="img/menu logo.png" alt="메뉴로고" />
+                </div><!--menu_logo end -->
+
+                <ul>
+                    <li class="depth01">
+                        <a href="#">ABOUT</a>
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">COLLECTION</a>
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">SHOP</a>
+                        <ul class="depth02">
+                            <li><a href="#">Fragrance</a></li>
+                            <li><a href="#">Lip</a></li>
+                            <li><a href="#">Eye</a></li>
+                            <li><a href="#">Face</a></li>
+                            <li><a href="#">Nail</a></li>
+                            <li><a href="#">Set</a></li>
+                            <li><a href="#">Object</a></li>
+                            <li><a href="#">Tool</a></li>
+                            <li><a href="#">시향 서비스</a></li>
+                            <li><a href="#">Look</a></li>
+                        </ul><!-- depth02 end -->
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">STORE</a>
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">COLLECTIVE</a>
+                    </li><!-- depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">COMMUNITY</a>
+                    </li><!-- depth01 end -->
+                </ul>
+            </nav>
+        </div><!-- inner end -->
+    </header>
+
+    <main>
+        <section class="main_visual">
+            <img src="img/메인비주얼.jpg" alt="메인비주얼" />
+            <div>
+                <h2>Slim-Fit Liquid Velvet</h2>
+                <p>가볍지만 선명하게,<br />
+                    건조함을 잊은 꽃잎 피니쉬</p>
+            </div>
+        </section><!-- main_visual end -->
+
+        <section class="best">
+            <div class="inner">
+                <div class="title">
+                    <h3>BEST</h3>
+                    <a href="#">MOST LOVED</a>
+                </div><!-- title end -->
+
+                <ul class="best_menu">
+                    <li class="on">
+                        <a href="#"><img src="img/01img4.jpg" alt="" /></a>
+                        <p>True Dimension<br />
+                            Radiance Balm</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/01img5.jpg" alt="" /></a>
+                        <p>Mood Enhancer<br />
+                            Water Liquid glow</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/01img6.jpg" alt="" /></a>
+                        <p>True Dimension<br />
+                            Layering Cheek</p>
+                    </li>
+                </ul>
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/01img.jpg" alt="" />
+                        </figure>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/01img2.jpg" alt="" />
+                        </figure>
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/01img3.jpg" alt="" />
+                        </figure>
+                    </div><!-- item end -->
+                </div><!-- list end -->
+            </div><!-- inner end -->
+        </section><!-- best end -->
+
+        <section class="event">
+            <div class="inner">
+                <div class="title">
+                    <h3>ITEM</h3>
+                    <a href="#">READ MORE</a>
+                </div><!-- title end -->
+                <ul class="event_menu">
+                    <li class="on">FACE</li>
+                    <li>LIP</li>
+                    <li>EYE</li>
+                </ul><!-- menu end -->
+
+                <div class="list on">
+                    <div class="item">
+                        <figure>
+                            <img src="img/face1.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Second skin<br />
+                                Foundation</h4>
+                            <p>32,400원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/face2.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Second skin cover<br />
+                                Concealer</h4>
+                            <p>32,400원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                </div><!-- list end / 페이스-->
+
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/lip1.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Mood enhancer<br />
+                                Lip glow</h4>
+                            <p>13,600원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/lip2.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>Mood enhancer<br />
+                                Sheer</h4>
+                            <p>15,200원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                </div><!-- list end / 립-->
+
+                <div class="list">
+                    <div class="item">
+                        <figure>
+                            <img src="img/eye1.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>New ambience<br />
+                                Color mascara</h4>
+                            <p>21,000원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+
+                    <div class="item">
+                        <figure>
+                            <img src="img/eye2.jpg" alt="" />
+                        </figure>
+                        <div class="text">
+                            <h4>New depth eye shadow<br />
+                                Palette</h4>
+                            <p>39,000원</p>
+                        </div><!-- text end -->
+                    </div><!-- item end -->
+                </div><!-- list end / 아이-->
+
+            </div><!-- inner end -->
+        </section><!-- event end -->
+    </main>
+    <footer>
+        <p>© 2020 VIVAWAVE Co., Ltd. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
